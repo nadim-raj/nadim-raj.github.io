@@ -252,6 +252,17 @@ h2{font:700 clamp(30px,4.2vw,50px)/1.08 var(--display);letter-spacing:-.032em;ma
 .chip{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;background:var(--surface);border:1px solid var(--rule);font-size:13.5px;color:var(--ink)}
 .chip i{width:6px;height:6px;border-radius:50%;background:var(--go)}
 
+/* Featured case study */
+.feature{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px 40px;align-items:end;padding:30px;margin-bottom:16px;border-color:rgba(99,91,255,.45);background:linear-gradient(135deg,var(--brand-wash),transparent 60%),var(--surface);transition:border-color .2s}
+.feature:hover{border-color:var(--brand)}
+.feature .k{color:var(--brand-text)}
+.feature h3{font:700 clamp(22px,2.6vw,30px)/1.2 var(--display);letter-spacing:-.025em;margin:14px 0 10px}
+.feature p{margin:0;max-width:44em;color:var(--ink-2);font-size:15.5px;line-height:1.62}
+.feature-cta{display:inline-flex;align-items:center;gap:8px;font:600 15px/1 var(--display);color:var(--brand-text);white-space:nowrap}
+.feature-cta svg{width:16px;height:16px;transition:transform .2s}
+.feature:hover .feature-cta svg{transform:translate(2px,-2px)}
+@media (max-width:760px){.feature{grid-template-columns:1fr}}
+
 /* Work bento */
 .bento{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .work{padding:26px;display:flex;flex-direction:column;min-height:300px}
@@ -550,7 +561,7 @@ h2{font:700 clamp(30px,4.2vw,50px)/1.08 var(--display);letter-spacing:-.032em;ma
       <div class="flow">
         <div class="card node spot reveal"><span class="k">01 · Sources</span><h3>Operational data</h3><ul><li>Product &amp; trading data</li><li>Payments</li><li>KYC &amp; onboarding</li></ul></div>
         <div class="card node spot reveal" data-d="1"><span class="k">02 · Orchestrate</span><h3>Apache Airflow</h3><ul><li>Scheduled ELT pipelines</li><li>SQL transformations</li></ul></div>
-        <div class="card node hub spot reveal" data-d="2"><span class="k">03 · Store</span><h3>PostgreSQL warehouse</h3><ul><li>10M+ rows a day</li><li>Semantic data models</li><li>Shared metric definitions</li></ul></div>
+        <div class="card node hub spot reveal" data-d="2"><span class="k">03 · Store</span><h3>PostgreSQL warehouse</h3><ul><li>10M+ rows a day</li><li>Semantic data models</li><li>Explicitly named metrics</li></ul></div>
         <div class="card node spot reveal" data-d="3"><span class="k">04 · Serve</span><h3>BI layer</h3><ul><li>Power BI</li><li>Apache Superset</li><li>Metabase</li><li>100+ dashboards</li></ul></div>
         <div class="card node out spot reveal" data-d="4"><span class="k">05 · Decide</span><h3>Business lines</h3><ul><li>CFDs</li><li>Futures</li><li>Broker</li><li>Risk &amp; Compliance</li></ul></div>
       </div>
@@ -569,6 +580,14 @@ h2{font:700 clamp(30px,4.2vw,50px)/1.08 var(--display);letter-spacing:-.032em;ma
         <div><p class="eyebrow"><b>04</b> Work</p><h2 id="work-h">Selected work</h2></div>
         <p>The problems my team and I have spent the most time on.</p>
       </div>
+      <a class="card feature spot reveal" href="https://github.com/nadim-raj/building-bi-from-zero" rel="noopener">
+        <div>
+          <span class="k">Case study · 7 min read</span>
+          <h3>Building a BI function from zero</h3>
+          <p>How the data function grew from one analyst to fifteen people across three business lines — the warehouse call, the pass-rate definitions, the model nobody used, and what I would do differently.</p>
+        </div>
+        <span class="feature-cta">Read the case study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+      </a>
       <div class="bento">
         <article class="card work wide spot reveal">
           <div class="txt">
@@ -581,8 +600,8 @@ h2{font:700 clamp(30px,4.2vw,50px)/1.08 var(--display);letter-spacing:-.032em;ma
         </article>
         <article class="card work spot reveal" data-d="1">
           <span class="k">Data platform</span>
-          <h3>One set of metric definitions</h3>
-          <p>Semantic models that give three business lines a single definition for each contested metric. The SQL was the easy half; the agreement was the work.</p>
+          <h3>Named metrics, not one number</h3>
+          <p>Three business lines counted pass rate three ways. Instead of forcing a single number, we kept each variant and named it explicitly, so a label always means one calculation.</p>
           <div class="viz stack" aria-hidden="true"><span>Airflow</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>PostgreSQL</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>BI</span></div>
           <div class="tags"><span>Governance</span><span>Modelling</span></div>
         </article>
@@ -624,9 +643,9 @@ h2{font:700 clamp(30px,4.2vw,50px)/1.08 var(--display);letter-spacing:-.032em;ma
         <p>What building a data function from zero, during hypergrowth, taught me.</p>
       </div>
       <ol class="principles">
-        <li class="card principle spot reveal"><h3>Metric definitions are a governance problem, not a technical one.</h3><p>The hardest thing I have enforced is not a pipeline or a schema. It is getting three business lines to agree on what a single contested metric means. The SQL was the easy half.</p></li>
+        <li class="card principle spot reveal"><h3>Metric definitions are a governance problem, not a technical one.</h3><p>The hardest thing I have enforced is not a pipeline or a schema. It is getting three business lines to stop using one name for three different numbers. The SQL was the easy half.</p></li>
         <li class="card principle spot reveal" data-d="1"><h3>Embedded beats centralised, once you can afford it.</h3><p>A central queue optimises for analyst utilisation. Embedding optimises for decisions actually changing. Those are different goals, and the second is the one that matters.</p></li>
-        <li class="card principle spot reveal"><h3>Adoption is the deliverable.</h3><p>I have shipped work that was technically sound and went unused. A dashboard nobody opens is not a partial success; it is a signal the problem was never properly understood.</p></li>
+        <li class="card principle spot reveal"><h3>Adoption is the deliverable.</h3><p>I have shipped a model that was technically sound and went unused, because the question it answered had moved on by the time it landed. Check the question is still live before you finish, not just before you start.</p></li>
         <li class="card principle spot reveal" data-d="1"><h3>Demand will always exceed capacity.</h3><p>The answer is not heroics. It is a legible intake process, an honest backlog, and the willingness to tell stakeholders what their request costs and what it displaces.</p></li>
       </ol>
     </div>
