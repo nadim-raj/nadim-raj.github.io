@@ -1,25 +1,33 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Kazi Nadimul Haque — Business Intelligence Leadership</title>
 <meta name="description" content="Kazi Nadimul Haque leads Business Intelligence at Next Ventures (FundedNext): a fifteen-person data function across CFDs, Futures and Broker, built from zero since 2020.">
 <link rel="canonical" href="https://nadim-raj.github.io/">
-<meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#FAFAF7" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0F1110" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#07070A">
 <meta property="og:type" content="profile">
+<meta property="og:site_name" content="Kazi Nadimul Haque">
 <meta property="og:title" content="Kazi Nadimul Haque — Business Intelligence Leadership">
-<meta property="og:description" content="Leading Business Intelligence at FundedNext. Joined as the first analyst in 2020; now a fifteen-person function across three business lines.">
+<meta property="og:description" content="Built FundedNext's data function from zero. Joined as the first analyst in 2020; now leading fifteen people across CFDs, Futures and Broker.">
 <meta property="og:url" content="https://nadim-raj.github.io/">
-<meta property="profile:first_name" content="Kazi Nadimul">
-<meta property="profile:last_name" content="Haque">
-<meta name="twitter:card" content="summary">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230F5C45'/%3E%3Ctext x='50%25' y='53%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-size='28' fill='%23ffffff'%3ENH%3C/text%3E%3C/svg%3E">
+<meta property="og:image" content="https://nadim-raj.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Kazi Nadimul Haque — Business Intelligence leadership in retail prop trading">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://nadim-raj.github.io/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238481FF'/%3E%3Cstop offset='1' stop-color='%234E36F5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='15' fill='url(%23g)'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,Helvetica,sans-serif' font-weight='700' font-size='25' fill='%23ffffff'%3ENH%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script>
+(function(){var d=document.documentElement,t=null;try{t=localStorage.getItem('theme')}catch(e){}
+var q=location.search.match(/[?&]theme=(light|dark)/);if(q)t=q[1];
+d.setAttribute('data-theme',t==='light'?'light':'dark');d.classList.add('js')})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -34,316 +42,715 @@
   ],
   "knowsAbout": ["Business Intelligence", "Data Analytics", "Proprietary Trading", "Data Engineering", "Experimentation", "Anomaly Detection"],
   "url": "https://nadim-raj.github.io/",
+  "image": "https://nadim-raj.github.io/avatar.jpg",
   "sameAs": ["https://www.linkedin.com/in/kazi-nadimul-haque/", "https://github.com/nadim-raj"]
 }
 </script>
 <style>
+/* ---------- Tokens: FundedNext palette (dark default) ---------- */
 :root{
-  --bg:#FAFAF7; --surface:#FFFFFF; --ink:#141414; --ink-2:#474744; --ink-3:#76766F;
-  --rule:#E3E2DB; --accent:#0F5C45; --accent-ink:#FFFFFF; --accent-soft:#E7F0EB;
-  --serif:"Newsreader",Georgia,"Times New Roman",serif;
-  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+  --bg:#07070A; --surface:#101016; --surface-2:#16161E;
+  --ink:#F5F6FA; --ink-2:#AEB3C2; --ink-3:#747A8C;
+  --rule:rgba(214,223,255,.08); --rule-2:rgba(214,223,255,.16);
+  --brand:#635BFF; --brand-deep:#4E36F5; --brand-text:#8F8BFF; --brand-tint:#B4AEFF; --brand-wash:rgba(99,91,255,.12);
+  --go:#09E354; --go-text:#33F575; --go-wash:rgba(9,227,84,.10);
+  --alert:#FF5257;
+  --glow:rgba(99,91,255,.38);
+  --shadow:inset 0 1px 0 rgba(255,255,255,.04),0 24px 60px -32px rgba(0,0,0,.9);
+  --display:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --r:18px;
+  color-scheme:dark;
 }
-@media (prefers-color-scheme: dark){
-  :root{
-    --bg:#0F1110; --surface:#151816; --ink:#ECECE7; --ink-2:#B5B5AE; --ink-3:#8A8A83;
-    --rule:#262A27; --accent:#62D2A8; --accent-ink:#0F1110; --accent-soft:#14261F;
-  }
+[data-theme="light"]{
+  --bg:#F9FAFB; --surface:#FFFFFF; --surface-2:#F2F4F7;
+  --ink:#101828; --ink-2:#475467; --ink-3:#667085;
+  --rule:#EAECF0; --rule-2:#D0D5DD;
+  --brand-text:#4E36F5; --brand-tint:#6366F1; --brand-wash:rgba(99,91,255,.08);
+  --go:#0DC04B; --go-text:#0D8838; --go-wash:rgba(13,192,75,.10);
+  --alert:#E53935;
+  --glow:rgba(99,91,255,.20);
+  --shadow:0 1px 2px rgba(16,24,40,.04),0 16px 40px -24px rgba(16,24,40,.18);
+  color-scheme:light;
 }
+
+/* ---------- Base ---------- */
 *,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:76px}
-@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-img{max-width:100%}
-a{color:inherit;text-decoration-line:underline;text-decoration-color:var(--rule);text-decoration-thickness:1px;text-underline-offset:4px;transition:color .15s,text-decoration-color .15s}
-a:hover{color:var(--accent);text-decoration-color:var(--accent)}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
-.skip{position:absolute;left:-9999px;top:12px}
-.skip:focus{left:16px;z-index:20;background:var(--surface);padding:8px 14px;border-radius:8px;border:1px solid var(--rule)}
-.wrap{max-width:1080px;margin:0 auto;padding-inline:24px}
-.eyebrow{font:500 12px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16.5px/1.65 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:clip;transition:background-color .3s,color .3s}
+::selection{background:var(--brand);color:#fff}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+:focus-visible{outline:2px solid var(--brand-text);outline-offset:3px;border-radius:8px}
+.skip{position:absolute;left:-9999px;top:12px;z-index:100}
+.skip:focus{left:16px;background:var(--surface);color:var(--ink);padding:10px 14px;border-radius:10px;border:1px solid var(--rule-2)}
+.wrap{max-width:1160px;margin:0 auto;padding-inline:clamp(16px,4vw,32px)}
+.k{display:block;font:500 11.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.print-only{display:none}
 
-/* Header */
-.site{position:sticky;top:0;z-index:10;background:var(--bg);background:color-mix(in srgb,var(--bg) 86%,transparent);-webkit-backdrop-filter:saturate(1.4) blur(12px);backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--rule)}
-.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
-.mark{font:500 15px/1 var(--sans);letter-spacing:-.01em;text-decoration:none;white-space:nowrap}
-.site nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
-.site nav a{font-size:14px;color:var(--ink-2);text-decoration:none}
-.site nav a:hover{color:var(--accent)}
-@media (max-width:640px){.site nav ul{gap:18px}.hide-sm{display:none}}
+/* ---------- Progress + Nav ---------- */
+.progress{position:fixed;left:0;right:0;top:0;height:2px;z-index:60;background:linear-gradient(90deg,var(--brand),var(--go));transform-origin:0 50%;transform:scaleX(0)}
+.nav{position:sticky;top:0;z-index:50;border-bottom:1px solid transparent;transition:background-color .25s,border-color .25s}
+.nav.scrolled{background:var(--bg);background:color-mix(in srgb,var(--bg) 80%,transparent);-webkit-backdrop-filter:saturate(1.5) blur(14px);backdrop-filter:saturate(1.5) blur(14px);border-bottom-color:var(--rule)}
+.nav .wrap{display:flex;align-items:center;gap:20px;height:68px}
+.brand{display:flex;align-items:center;gap:11px;font:600 15px/1 var(--display);letter-spacing:-.01em;white-space:nowrap}
+.logo{display:grid;place-items:center;width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,#8481FF,#4E36F5);color:#fff;font:700 12px/1 var(--display);letter-spacing:.02em;box-shadow:0 8px 22px -8px rgba(99,91,255,.8)}
+.links{display:flex;gap:2px;margin:0 0 0 auto;padding:0;list-style:none}
+.links a{display:block;padding:8px 13px;border-radius:999px;font-size:14px;color:var(--ink-2);transition:color .2s,background-color .2s}
+.links a:hover{color:var(--ink)}
+.links a.active{color:var(--ink);background:var(--brand-wash)}
+.nav-actions{display:flex;align-items:center;gap:8px}
+.icon-btn{display:grid;place-items:center;width:38px;height:38px;border-radius:999px;border:1px solid var(--rule-2);background:transparent;color:var(--ink-2);cursor:pointer;transition:color .2s,border-color .2s}
+.icon-btn:hover{color:var(--ink);border-color:var(--brand)}
+.icon-btn svg{width:17px;height:17px}
+.i-moon{display:none!important}
+[data-theme="light"] .i-sun{display:none!important}
+[data-theme="light"] .i-moon{display:block!important}
+@media (max-width:820px){.links{display:none}.nav-actions{margin-left:auto}}
 
-/* Hero */
-.hero{padding-block:clamp(64px,11vw,120px) clamp(48px,7vw,80px)}
-.hero h1{font:400 clamp(44px,7.2vw,84px)/1.02 var(--serif);letter-spacing:-.025em;margin:22px 0 30px}
-.lede{font-size:clamp(19px,2.2vw,23px);line-height:1.55;color:var(--ink-2);max-width:34em;margin:0}
-.lede strong{color:var(--ink);font-weight:500}
-.actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:38px}
-.btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 20px;border-radius:999px;font:500 15px/1 var(--sans);text-decoration:none;border:1px solid var(--rule);background:var(--surface);color:var(--ink);transition:background .15s,border-color .15s,color .15s}
-.btn:hover{border-color:var(--accent);color:var(--accent)}
-.btn.primary{background:var(--ink);border-color:var(--ink);color:var(--bg)}
-.btn.primary:hover{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
-.btn svg{width:14px;height:14px}
-.loc{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--ink-3);margin-left:8px}
-.loc::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:0 22px;border-radius:999px;font:600 15px/1 var(--display);letter-spacing:-.005em;border:1px solid transparent;cursor:pointer;white-space:nowrap;transition:transform .2s,box-shadow .2s,background-color .2s,border-color .2s,color .2s}
+.btn svg{width:16px;height:16px}
+.btn-primary{background:var(--brand);color:#fff;box-shadow:0 12px 32px -12px rgba(99,91,255,.85),inset 0 1px 0 rgba(255,255,255,.22)}
+.btn-primary:hover{background:var(--brand-deep);transform:translateY(-1px)}
+.btn-ghost{border-color:var(--rule-2);color:var(--ink);background:var(--surface)}
+.btn-ghost:hover{border-color:var(--brand);transform:translateY(-1px)}
+.btn-sm{min-height:38px;padding:0 16px;font-size:14px}
 
-/* Stats */
-.stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-block:1px solid var(--rule);margin:0;padding:0;list-style:none}
-.stat{padding:30px 22px 28px;border-left:1px solid var(--rule)}
-.stat:first-child{border-left:0;padding-left:0}
-.stat b{display:block;font:400 clamp(36px,4.2vw,48px)/1 var(--serif);letter-spacing:-.02em;font-weight:400}
-.stat span{display:block;margin-top:12px;font-size:14px;line-height:1.45;color:var(--ink-3)}
-@media (max-width:860px){
+/* ---------- Cards ---------- */
+.card{position:relative;background:var(--surface);border:1px solid var(--rule);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.spot::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(420px circle at var(--mx,50%) var(--my,-30%),var(--brand-wash),transparent 62%);opacity:0;transition:opacity .35s;pointer-events:none}
+.spot:hover::before{opacity:1}
+.spot > *{position:relative}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;padding-block:clamp(48px,8vw,104px) clamp(40px,6vw,72px);isolation:isolate}
+.hero-bg{position:absolute;left:0;right:0;top:-68px;bottom:0;z-index:-1;overflow:hidden;pointer-events:none}
+.hero-bg::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--rule) 1px,transparent 1px),linear-gradient(90deg,var(--rule) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse 75% 65% at 50% 15%,#000 25%,transparent 75%);mask-image:radial-gradient(ellipse 75% 65% at 50% 15%,#000 25%,transparent 75%)}
+.hero-bg::after{content:"";position:absolute;left:50%;top:-38%;width:min(1200px,140vw);aspect-ratio:1.5;transform:translateX(-50%);background:radial-gradient(closest-side,var(--glow),transparent)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:clamp(32px,5vw,72px);align-items:center}
+@media (max-width:980px){.hero-grid{grid-template-columns:1fr}}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:7px 14px 7px 12px;border-radius:999px;border:1px solid var(--rule-2);background:var(--surface);font-size:13px;color:var(--ink-2)}
+.live{position:relative;flex:none;width:8px;height:8px;border-radius:50%;background:var(--go)}
+.live::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid var(--go);opacity:0;animation:ping 2.2s cubic-bezier(0,0,.2,1) infinite}
+@keyframes ping{0%{transform:scale(.45);opacity:.85}100%{transform:scale(1.7);opacity:0}}
+.hero h1{font:700 clamp(40px,6vw,74px)/1.03 var(--display);letter-spacing:-.035em;margin:26px 0 24px;text-wrap:balance}
+.grad{background:linear-gradient(95deg,var(--brand-tint) 0%,var(--brand) 48%,var(--go) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.lede{font-size:clamp(17px,1.8vw,19.5px);line-height:1.62;color:var(--ink-2);max-width:35em;margin:0}
+.lede strong{color:var(--ink);font-weight:600}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.meta-row{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:28px;font-size:13.5px;color:var(--ink-3)}
+.meta-row span{display:inline-flex;align-items:center;gap:8px}
+.meta-row svg{width:15px;height:15px}
+
+/* Org card */
+.org-card{margin:0;padding:22px 22px 20px}
+.card-head{display:flex;justify-content:space-between;align-items:center;font:500 12px/1 var(--mono);color:var(--ink-3);padding-bottom:16px;margin-bottom:6px;border-bottom:1px solid var(--rule)}
+.tag{display:inline-flex;align-items:center;gap:7px;color:var(--go-text)}
+.tag i{width:6px;height:6px;border-radius:50%;background:var(--go)}
+.tier{display:grid;grid-template-columns:118px minmax(0,1fr) 30px;align-items:center;gap:14px;padding:13px 0}
+.tier + .tier{border-top:1px dashed var(--rule-2)}
+.tier-label{font-size:13.5px;color:var(--ink);line-height:1.3}
+.tier-label small{display:block;margin-top:3px;font:500 10.5px/1.3 var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3)}
+.dots{display:flex;flex-wrap:wrap;gap:7px}
+.dot{width:17px;height:17px;border-radius:5px;background:var(--brand-wash);border:1px solid rgba(99,91,255,.55)}
+.dot.lead{background:linear-gradient(135deg,#8481FF,#4E36F5);border-color:transparent;box-shadow:0 0 0 4px var(--brand-wash)}
+.dot.mgr{background:rgba(99,91,255,.72);border-color:transparent}
+.dot.sr{background:rgba(99,91,255,.34)}
+.tier-n{font:700 16px/1 var(--display);text-align:right;font-variant-numeric:tabular-nums}
+.org-foot{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;margin-top:8px;padding-top:16px;border-top:1px solid var(--rule)}
+.org-foot b{display:block;font:600 12px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+.org-foot span{display:block;margin-top:7px;font-size:12.5px;line-height:1.4;color:var(--ink-3)}
+.org-foot svg{width:18px;height:18px;color:var(--brand-text)}
+.org-foot > div:last-child{text-align:right}
+.org-foot > div:last-child b{color:var(--go-text)}
+
+/* ---------- Stats ---------- */
+.stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));margin:0;padding:0;list-style:none;border:1px solid var(--rule);border-radius:var(--r);background:var(--surface);box-shadow:var(--shadow);overflow:hidden}
+.stat{padding:26px 24px}
+.stat + .stat{border-left:1px solid var(--rule)}
+.stat b{display:block;font:700 clamp(30px,3.3vw,42px)/1 var(--display);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.stat b em{font-style:normal;color:var(--brand-text)}
+.stat > span{display:block;margin-top:10px;font-size:13.5px;line-height:1.45;color:var(--ink-3)}
+@media (max-width:900px){
   .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .stat{border-left:0;border-top:1px solid var(--rule);padding:24px 0}
+  .stat,.stat + .stat{border-left:0;border-top:1px solid var(--rule)}
   .stat:nth-child(-n+2){border-top:0}
-  .stat:nth-child(even){border-left:1px solid var(--rule);padding-left:20px}
+  .stat:nth-child(even){border-left:1px solid var(--rule)}
   .stat:last-child{grid-column:1/-1}
 }
 
-/* Sections */
-section.block{padding-block:clamp(64px,9vw,104px)}
-section.block + section.block{border-top:1px solid var(--rule)}
-.grid2{display:grid;grid-template-columns:190px minmax(0,1fr);gap:48px}
-.side .eyebrow{position:sticky;top:96px}
-.main{max-width:740px}
-.main h2{font:400 clamp(30px,3.6vw,40px)/1.15 var(--serif);letter-spacing:-.018em;margin:0 0 26px}
-.main > p{color:var(--ink-2);margin:0 0 1.1em}
-.main > p strong{color:var(--ink);font-weight:500}
-.note{font-size:13.5px!important;color:var(--ink-3)!important}
-@media (max-width:860px){.grid2{grid-template-columns:1fr;gap:16px}.side .eyebrow{position:static}}
+/* ---------- Ticker ---------- */
+.ticker{margin-top:clamp(40px,6vw,64px);border-block:1px solid var(--rule);overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.track{display:flex;width:max-content;animation:tick 52s linear infinite}
+.ticker:hover .track{animation-play-state:paused}
+.group{display:flex}
+.group span{display:inline-flex;align-items:center;gap:22px;padding:15px 22px 15px 0;font:500 12.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);white-space:nowrap}
+.group span::after{content:"";width:6px;height:6px;background:var(--brand);transform:rotate(45deg)}
+@keyframes tick{to{transform:translateX(-50%)}}
 
-/* Scope cards */
-.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:16px;overflow:hidden;margin-top:8px}
-.card{background:var(--surface);padding:26px 26px 28px}
-.card h3{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
-.card p{margin:0;color:var(--ink-2);font-size:15.5px;line-height:1.62}
-@media (max-width:640px){.cards{grid-template-columns:1fr}}
+/* ---------- Sections ---------- */
+.section{padding-block:clamp(72px,10vw,124px)}
+.sec-head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:20px 56px;align-items:end;margin-bottom:clamp(32px,5vw,56px)}
+.sec-head.solo{grid-template-columns:1fr}
+.eyebrow{display:flex;align-items:center;gap:12px;font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin:0 0 18px}
+.eyebrow b{font-weight:600;color:var(--brand-text)}
+.eyebrow::after{content:"";width:40px;height:1px;background:linear-gradient(90deg,var(--brand),transparent)}
+h2{font:700 clamp(30px,4.2vw,50px)/1.08 var(--display);letter-spacing:-.032em;margin:0;text-wrap:balance}
+.sec-head p{margin:0;color:var(--ink-2);font-size:17px;line-height:1.6;max-width:32em}
+@media (max-width:860px){.sec-head{grid-template-columns:1fr}}
 
-/* Work */
-.work{list-style:none;margin:8px 0 0;padding:0;border-top:1px solid var(--rule)}
-.work > li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:0 14px;padding:28px 0;border-bottom:1px solid var(--rule)}
-.work .n{font:500 13px/1.9 var(--mono);color:var(--ink-3)}
-.work h3{font:500 19px/1.4 var(--sans);letter-spacing:-.01em;margin:0 0 8px}
-.work p{margin:0;color:var(--ink-2);font-size:15.5px;line-height:1.62}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
-.tags span{font:500 12px/1 var(--mono);color:var(--ink-2);background:var(--accent-soft);padding:7px 10px;border-radius:999px}
+/* About */
+.about-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(28px,5vw,64px);align-items:start}
+.prose p{margin:0 0 1.15em;color:var(--ink-2);font-size:17px;line-height:1.72}
+.prose p.big{font:500 clamp(20px,2.2vw,25px)/1.48 var(--display);letter-spacing:-.018em;color:var(--ink)}
+.prose strong{color:var(--ink);font-weight:600}
+.context{padding:26px}
+.context h3{margin:0 0 8px}
+.context dl{margin:0}
+.context .row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:15px 0;border-bottom:1px solid var(--rule)}
+.context dt{color:var(--ink-2);font-size:14.5px}
+.context dd{margin:0;font:700 23px/1 var(--display);letter-spacing:-.025em;font-variant-numeric:tabular-nums}
+.context .src{margin:14px 0 0;font-size:12.5px;color:var(--ink-3)}
+@media (max-width:900px){.about-grid{grid-template-columns:1fr}}
+
+/* Scope */
+.scope{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.scope .card{padding:26px 24px}
+.ico{display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--brand-wash);color:var(--brand-text);border:1px solid rgba(99,91,255,.28);margin-bottom:22px}
+.ico svg{width:20px;height:20px}
+.scope h3{font:600 18.5px/1.3 var(--display);letter-spacing:-.015em;margin:0 0 10px}
+.scope p{margin:0;color:var(--ink-2);font-size:15px;line-height:1.62}
+@media (max-width:1020px){.scope{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.scope{grid-template-columns:1fr}}
+
+/* Platform flow */
+.flow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:30px}
+.flow .card{overflow:visible}
+.node{padding:20px 18px 22px}
+.node .k{margin-bottom:14px}
+.node h3{font:600 16.5px/1.3 var(--display);letter-spacing:-.01em;margin:0 0 14px}
+.node ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.node li{display:flex;gap:9px;align-items:baseline;font-size:13.5px;line-height:1.45;color:var(--ink-2)}
+.node li::before{content:"";flex:none;width:5px;height:5px;border-radius:50%;background:var(--ink-3);transform:translateY(-2px)}
+.node.hub{border-color:rgba(99,91,255,.55);box-shadow:0 0 0 1px rgba(99,91,255,.22),0 24px 60px -28px var(--glow)}
+.node.hub .k{color:var(--brand-text)}
+.node.hub li::before{background:var(--brand)}
+.node.out .k{color:var(--go-text)}
+.node.out li::before{background:var(--go)}
+.node:not(:last-child)::after{content:"";position:absolute;top:50%;right:-31px;width:31px;height:2px;background-image:repeating-linear-gradient(90deg,var(--brand) 0 6px,transparent 6px 11px);background-size:22px 2px;animation:flowx .9s linear infinite}
+@keyframes flowx{to{background-position:22px 0}}
+@keyframes flowy{to{background-position:0 22px}}
+@media (max-width:1020px){
+  .flow{grid-template-columns:1fr;max-width:560px}
+  .node:not(:last-child)::after{top:100%;right:auto;left:30px;width:2px;height:31px;background-image:repeating-linear-gradient(180deg,var(--brand) 0 6px,transparent 6px 11px);background-size:2px 22px;animation-name:flowy}
+}
+.flow-note{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:30px;padding:14px 18px;border:1px dashed var(--rule-2);border-radius:14px}
+.flow-note .k{margin-right:6px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;background:var(--surface);border:1px solid var(--rule);font-size:13.5px;color:var(--ink)}
+.chip i{width:6px;height:6px;border-radius:50%;background:var(--go)}
+
+/* Work bento */
+.bento{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.work{padding:26px;display:flex;flex-direction:column;min-height:300px}
+.work h3{font:600 clamp(19px,1.9vw,22px)/1.25 var(--display);letter-spacing:-.02em;margin:14px 0 10px}
+.work p{margin:0;color:var(--ink-2);font-size:15px;line-height:1.62}
+.work .viz{margin-top:24px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:22px}
+.tags span{font:500 11.5px/1 var(--mono);color:var(--ink-2);background:var(--surface-2);border:1px solid var(--rule);padding:7px 10px;border-radius:999px}
+.work.wide{grid-column:span 2;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:stretch}
+.work.wide .txt{display:flex;flex-direction:column}
+.work.wide .viz{margin-top:0;align-self:center}
+@media (max-width:1020px){.bento{grid-template-columns:repeat(2,minmax(0,1fr))}.work.wide{grid-column:1/-1}}
+@media (max-width:640px){.bento{grid-template-columns:1fr}.work.wide{grid-template-columns:1fr}.work{min-height:0}}
+.funnel{display:grid;gap:9px}
+.funnel div{height:42px;display:flex;align-items:center;padding-inline:14px;border-radius:10px;font:500 12px/1 var(--mono);letter-spacing:.05em;color:var(--ink);background:linear-gradient(90deg,rgba(99,91,255,.55),rgba(99,91,255,.12));border:1px solid rgba(99,91,255,.35);transform-origin:left center}
+.funnel div:nth-child(2){width:84%}
+.funnel div:nth-child(3){width:67%}
+.funnel div:nth-child(4){width:50%;background:linear-gradient(90deg,rgba(9,227,84,.5),rgba(9,227,84,.1));border-color:rgba(9,227,84,.4)}
+.stack{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font:500 11.5px/1 var(--mono);color:var(--ink-2)}
+.stack span{padding:8px 10px;border-radius:8px;background:var(--surface-2);border:1px solid var(--rule)}
+.stack svg{width:13px;height:13px;color:var(--ink-3)}
+.ab{display:grid;gap:10px}
+.ab div{display:grid;grid-template-columns:16px 1fr;align-items:center;gap:10px;font:600 11px/1 var(--mono);color:var(--ink-3)}
+.ab i{display:block;height:10px;border-radius:99px;background:var(--surface-2);border:1px solid var(--rule);transform-origin:left center}
+.ab div:last-child i{background:linear-gradient(90deg,var(--brand),var(--go));border-color:transparent}
+.spark{width:100%;height:auto;overflow:visible}
+.spark .th{stroke:var(--rule-2);stroke-dasharray:4 5;stroke-width:1.2}
+.spark .ln{stroke:var(--brand-text);stroke-width:2;fill:none;stroke-linejoin:round;stroke-linecap:round}
+.spark .ar{fill:var(--brand-wash)}
+.spark .pt{fill:var(--alert)}
+.spark .halo{fill:var(--alert);opacity:.25;transform-origin:200px 9px;animation:halo 2s ease-out infinite}
+@keyframes halo{0%{transform:scale(.6);opacity:.45}100%{transform:scale(2.4);opacity:0}}
+.skel{display:grid;gap:9px}
+.skel i{display:block;height:9px;border-radius:99px;background:linear-gradient(90deg,var(--surface-2) 0%,rgba(99,91,255,.35) 50%,var(--surface-2) 100%);background-size:220% 100%;animation:shimmer 2.6s linear infinite}
+.skel i:nth-child(2){width:88%;animation-delay:.15s}
+.skel i:nth-child(3){width:94%;animation-delay:.3s}
+.skel i:nth-child(4){width:58%;animation-delay:.45s}
+@keyframes shimmer{from{background-position:120% 0}to{background-position:-120% 0}}
 
 /* Principles */
-.principles{counter-reset:p;list-style:none;padding:0;margin:8px 0 0;display:grid;gap:34px}
-.principles li{position:relative;padding-left:56px}
-.principles li::before{counter-increment:p;content:"0" counter(p);position:absolute;left:0;top:6px;font:500 13px/1 var(--mono);color:var(--accent)}
-.principles strong{display:block;font:400 23px/1.3 var(--serif);letter-spacing:-.01em;font-weight:400;margin-bottom:8px;color:var(--ink)}
-.principles p{margin:0;color:var(--ink-2)}
-@media (max-width:480px){.principles li{padding-left:0}.principles li::before{position:static;display:block;margin-bottom:10px}}
+.principles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:0;padding:0;list-style:none;counter-reset:p}
+.principle{padding:30px 28px 32px;counter-increment:p}
+.principle::after{content:"0" counter(p);position:absolute;top:26px;right:26px;font:600 12px/1 var(--mono);color:var(--brand-text);letter-spacing:.06em}
+.principle h3{font:600 clamp(20px,2.1vw,25px)/1.28 var(--display);letter-spacing:-.022em;margin:0 0 14px;padding-right:40px}
+.principle p{margin:0;color:var(--ink-2);font-size:15.5px;line-height:1.68}
+@media (max-width:760px){.principles{grid-template-columns:1fr}}
 
-/* Timeline */
-.timeline{margin:8px 0 0;padding:0;list-style:none;border-top:1px solid var(--rule)}
-.timeline > li{display:grid;grid-template-columns:128px minmax(0,1fr);gap:4px 24px;padding:24px 0;border-bottom:1px solid var(--rule)}
-.when{font:500 13px/1.85 var(--mono);color:var(--ink-3)}
-.role{font-weight:600;margin:0;letter-spacing:-.005em}
-.org{color:var(--ink-2);margin:2px 0 0}
-.desc{margin:10px 0 0;color:var(--ink-2);font-size:15.5px;line-height:1.62}
-.sub{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin:52px 0 0}
-.sub + .timeline{margin-top:16px}
-@media (max-width:560px){.timeline > li{grid-template-columns:1fr}}
-.toolkit{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-.toolkit span{font:500 13px/1 var(--mono);color:var(--ink);border:1px solid var(--rule);background:var(--surface);padding:9px 12px;border-radius:999px}
+/* Experience */
+.exp-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr);gap:clamp(28px,5vw,64px);align-items:start}
+.tl{list-style:none;margin:0;padding:0;position:relative}
+.tl::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:1px;background:linear-gradient(var(--brand),var(--rule-2) 45%)}
+.tl > li{position:relative;padding:0 0 38px 42px}
+.tl > li:last-child{padding-bottom:0}
+.tl > li::before{content:"";position:absolute;left:0;top:4px;width:15px;height:15px;border-radius:50%;background:var(--bg);border:2px solid var(--rule-2)}
+.tl > li.now::before{background:var(--brand);border-color:var(--brand);box-shadow:0 0 0 5px var(--brand-wash)}
+.when{font:500 12px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.tl h3{font:600 19.5px/1.3 var(--display);letter-spacing:-.015em;margin:10px 0 4px}
+.org-name{margin:0;color:var(--brand-text);font-size:14.5px;font-weight:500}
+.tl .d{margin:10px 0 0;color:var(--ink-2);font-size:15px;line-height:1.65}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.badges span{font-size:12.5px;padding:6px 11px;border-radius:999px;background:var(--go-wash);color:var(--go-text);border:1px solid rgba(9,227,84,.22)}
+.side-stack{display:grid;gap:16px}
+.mini{padding:24px}
+.mini .k{margin-bottom:18px}
+.edu{list-style:none;margin:0;padding:0;display:grid;gap:18px}
+.edu b{display:block;font:600 15.5px/1.35 var(--display);letter-spacing:-.01em}
+.edu span{display:block;font-size:14px;color:var(--ink-2);margin-top:4px}
+.edu em{display:block;margin-top:7px;font:500 12px/1 var(--mono);font-style:normal;color:var(--ink-3)}
+.tools{display:flex;flex-wrap:wrap;gap:6px}
+.tools span{font:500 12px/1 var(--mono);padding:8px 10px;border-radius:8px;background:var(--surface-2);border:1px solid var(--rule);color:var(--ink)}
+@media (max-width:900px){.exp-grid{grid-template-columns:1fr}}
 
-/* Contact */
-.contact .main h2{font-size:clamp(40px,6vw,64px);line-height:1.04;margin-bottom:18px}
-.big-links{display:flex;flex-wrap:wrap;gap:14px 36px;margin-top:30px}
-.big-links a{display:inline-flex;align-items:baseline;gap:10px;font:400 clamp(24px,2.8vw,30px)/1.2 var(--serif);text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:6px}
-.big-links a:hover{border-color:var(--accent)}
-.big-links small{font:500 12px/1 var(--mono);color:var(--ink-3)}
+/* Portrait */
+.byline{display:flex;align-items:center;flex-wrap:wrap;gap:14px}
+.byline .pill{margin:0}
+.avatar{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:50% 30%;background:#fff;box-shadow:0 0 0 3px var(--bg),0 0 0 5px var(--brand),0 14px 34px -10px var(--glow)}
+.pill .short{display:none}
+@media (max-width:480px){.pill .long{display:none}.pill .short{display:inline}.avatar{width:56px;height:56px}}
+.cta-avatar{width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:50% 30%;background:#fff;margin-bottom:28px;box-shadow:0 0 0 3px rgba(255,255,255,.92),0 20px 44px -14px rgba(0,0,0,.55)}
 
-footer{border-top:1px solid var(--rule);padding-block:28px;color:var(--ink-3);font-size:13.5px}
-footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+/* Contact CTA */
+.cta{position:relative;overflow:hidden;isolation:isolate;border-radius:28px;padding:clamp(40px,7vw,88px) clamp(24px,6vw,72px);background:radial-gradient(130% 150% at 100% 0%,#8481FF 0%,#635BFF 28%,#4E36F5 58%,#2B20B0 100%);color:#fff;box-shadow:0 40px 100px -50px rgba(99,91,255,.9)}
+.cta::before{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:radial-gradient(ellipse 80% 90% at 85% 10%,#000,transparent 70%);mask-image:radial-gradient(ellipse 80% 90% at 85% 10%,#000,transparent 70%)}
+.cta::after{content:"";position:absolute;z-index:-1;right:-12%;bottom:-55%;width:60%;aspect-ratio:1;background:radial-gradient(closest-side,rgba(9,227,84,.42),transparent)}
+.cta .eyebrow{color:rgba(255,255,255,.72)}
+.cta .eyebrow b{color:#fff}
+.cta .eyebrow::after{background:linear-gradient(90deg,#fff,transparent)}
+.cta h2{font-size:clamp(34px,5.4vw,64px);line-height:1.03;max-width:13ch;color:#fff}
+.cta p{margin:20px 0 0;max-width:32em;font-size:clamp(16.5px,1.7vw,19px);line-height:1.6;color:rgba(255,255,255,.88)}
+.cta-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.btn-white{background:#fff;color:#1E1A5C;box-shadow:0 14px 34px -14px rgba(0,0,0,.55)}
+.btn-white:hover{transform:translateY(-1px);box-shadow:0 18px 40px -14px rgba(0,0,0,.6)}
+.btn-line{border-color:rgba(255,255,255,.42);color:#fff}
+.btn-line:hover{border-color:#fff;background:rgba(255,255,255,.1);transform:translateY(-1px)}
+
+/* Footer */
+.foot{margin-top:clamp(56px,8vw,96px);border-top:1px solid var(--rule);padding-block:28px 44px;font-size:13.5px;color:var(--ink-3)}
+.foot .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px}
+.foot nav{display:flex;gap:20px}
+.foot a:hover{color:var(--ink)}
+
+/* ---------- Motion ---------- */
+.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .75s cubic-bezier(.2,.7,.2,1),transform .75s cubic-bezier(.2,.7,.2,1)}
+.js .reveal.in{opacity:1;transform:none}
+.js .reveal[data-d="1"]{transition-delay:.07s}
+.js .reveal[data-d="2"]{transition-delay:.14s}
+.js .reveal[data-d="3"]{transition-delay:.21s}
+.js .reveal[data-d="4"]{transition-delay:.28s}
+.js .reveal .dot{transform:scale(0);opacity:0}
+.js .reveal.in .dot{animation:pop .5s cubic-bezier(.2,.9,.3,1.35) forwards;animation-delay:calc(var(--i) * 55ms + 250ms)}
+@keyframes pop{to{transform:scale(1);opacity:1}}
+.js .reveal .funnel div,.js .reveal .ab i{transform:scaleX(0)}
+.js .reveal.in .funnel div,.js .reveal.in .ab i{transform:scaleX(1);transition:transform 1s cubic-bezier(.2,.8,.2,1) .25s}
+.js .reveal.in .funnel div:nth-child(2){transition-delay:.35s}
+.js .reveal.in .funnel div:nth-child(3){transition-delay:.45s}
+.js .reveal.in .funnel div:nth-child(4){transition-delay:.55s}
+.js .reveal.in .ab div:last-child i{transition-delay:.45s}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;animation-delay:0s!important;transition-duration:.001ms!important;transition-delay:0s!important}
+  .track{animation:none!important}
+  .js .reveal,.js .reveal .dot,.js .reveal .funnel div,.js .reveal .ab i{opacity:1;transform:none}
+}
+
+/* ---------- Print: clean one-pager ---------- */
+@media print{
+  :root,[data-theme]{--bg:#fff;--surface:#fff;--surface-2:#fff;--ink:#101828;--ink-2:#344054;--ink-3:#667085;--rule:#EAECF0;--rule-2:#D0D5DD;--brand-text:#4E36F5;--go-text:#0D8838;--brand-wash:transparent;--go-wash:transparent;--shadow:none;--glow:transparent;color-scheme:light}
+  body{font-size:11.5px}
+  .nav,.progress,.ticker,.hero-bg,.hero-actions,.cta-actions,.skip,.viz,.org-card,.flow-note{display:none!important}
+  .js .reveal{opacity:1!important;transform:none!important}
+  .hero{padding-block:0 18px}.hero-grid{grid-template-columns:1fr}.hero h1{font-size:30px;margin:10px 0}
+  .grad{background:none;color:#4E36F5;-webkit-text-fill-color:#4E36F5}
+  .section{padding-block:18px}.sec-head{margin-bottom:14px}h2{font-size:22px}
+  .card{box-shadow:none;break-inside:avoid}
+  .flow{grid-template-columns:repeat(5,1fr);gap:8px}.node:not(:last-child)::after{display:none}
+  .cta{background:none;color:#101828;border:1px solid #EAECF0;box-shadow:none;padding:20px}
+  .cta h2,.cta p{color:#101828}.cta .eyebrow,.cta .eyebrow b{color:#667085}
+  .print-only{display:block;margin-top:10px}
+}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
 
-<header class="site">
-  <div class="wrap bar">
-    <a class="mark" href="#top">Kazi Nadimul Haque</a>
-    <nav aria-label="Primary">
-      <ul>
-        <li class="hide-sm"><a href="#about">About</a></li>
-        <li class="hide-sm"><a href="#work">Work</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Kazi Nadimul Haque, back to top"><span class="logo" aria-hidden="true">NH</span>Kazi Nadimul Haque</a>
+    <ul class="links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#platform">Platform</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#experience">Experience</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="icon-btn" id="theme" type="button" aria-label="Switch to light theme">
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"/></svg>
+      </button>
+      <a class="btn btn-primary btn-sm" href="#contact">Contact</a>
+    </div>
   </div>
 </header>
 
 <main id="main">
-  <div class="wrap" id="top">
-    <div class="hero">
-      <p class="eyebrow">Business Intelligence · Retail Prop Trading</p>
-      <h1>Kazi Nadimul Haque</h1>
-      <p class="lede">I lead Business Intelligence at <strong>Next Ventures</strong>, the company behind <strong>FundedNext</strong>. I joined in 2020 as its first analyst, when there was no data function at all. Today it is fifteen people serving three business lines.</p>
-      <div class="actions">
-        <a class="btn primary" href="https://www.linkedin.com/in/kazi-nadimul-haque/" rel="noopener">LinkedIn
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
-        <a class="btn" href="https://github.com/nadim-raj" rel="noopener">GitHub
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5"/></svg></a>
-        <span class="loc">Kuala Lumpur, Malaysia</span>
+  <section class="hero" id="top">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="wrap hero-grid">
+      <div>
+        <div class="byline reveal"><img class="avatar" src="avatar.jpg" width="64" height="64" alt="Portrait of Kazi Nadimul Haque" decoding="async" fetchpriority="high"><p class="pill"><span class="live" aria-hidden="true"></span><span>Leading <span class="long">Business Intelligence</span><span class="short">BI</span> at FundedNext</span></p></div>
+        <h1 class="reveal" data-d="1">I built FundedNext's data function <span class="grad">from&nbsp;zero.</span></h1>
+        <p class="lede reveal" data-d="2">I'm <strong>Kazi Nadimul Haque</strong>, Manager II of Business Intelligence at Next Ventures. I joined in 2020 as the first analyst, into a company with no warehouse, no pipelines, and no reporting. Today I lead fifteen people across CFDs, Futures, and Broker, and own product for CFDs.</p>
+        <div class="hero-actions reveal" data-d="3">
+          <a class="btn btn-primary" href="#contact">Get in touch
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/kazi-nadimul-haque/" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>LinkedIn</a>
+        </div>
+        <div class="meta-row reveal" data-d="4">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 1 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Kuala Lumpur, Malaysia</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg>7+ years in analytics &amp; commercial roles</span>
+        </div>
       </div>
-    </div>
 
-    <ul class="stats" aria-label="At a glance">
-      <li class="stat"><b>15</b><span>People across two management layers</span></li>
-      <li class="stat"><b>3</b><span>Business lines: CFDs, Futures, Broker</span></li>
-      <li class="stat"><b>10M+</b><span>Rows processed every day</span></li>
-      <li class="stat"><b>100+</b><span>Dashboards in production</span></li>
-      <li class="stat"><b>2020</b><span>Joined as the first analyst</span></li>
+      <figure class="card org-card reveal" data-d="2" aria-label="Team structure: a lead, three managers, four senior analysts and eight analysts">
+        <figcaption class="card-head"><span>team.structure</span><span class="tag"><i></i>Today</span></figcaption>
+        <div class="tier">
+          <div class="tier-label">Lead<small>Manager II</small></div>
+          <div class="dots"><span class="dot lead" style="--i:0"></span></div>
+          <div class="tier-n">1</div>
+        </div>
+        <div class="tier">
+          <div class="tier-label">Managers<small>Manager I</small></div>
+          <div class="dots"><span class="dot mgr" style="--i:1"></span><span class="dot mgr" style="--i:2"></span><span class="dot mgr" style="--i:3"></span></div>
+          <div class="tier-n">3</div>
+        </div>
+        <div class="tier">
+          <div class="tier-label">Senior analysts<small>Sr. Executive</small></div>
+          <div class="dots"><span class="dot sr" style="--i:4"></span><span class="dot sr" style="--i:5"></span><span class="dot sr" style="--i:6"></span><span class="dot sr" style="--i:7"></span></div>
+          <div class="tier-n">4</div>
+        </div>
+        <div class="tier">
+          <div class="tier-label">Analysts<small>Executive</small></div>
+          <div class="dots"><span class="dot" style="--i:8"></span><span class="dot" style="--i:9"></span><span class="dot" style="--i:10"></span><span class="dot" style="--i:11"></span><span class="dot" style="--i:12"></span><span class="dot" style="--i:13"></span><span class="dot" style="--i:14"></span><span class="dot" style="--i:15"></span></div>
+          <div class="tier-n">8</div>
+        </div>
+        <div class="org-foot">
+          <div><b>2020</b><span>1 analyst, no data function</span></div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          <div><b>Today</b><span>15-person team, 3 business lines</span></div>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <ul class="stats reveal" aria-label="At a glance">
+      <li class="stat"><b><span data-count="15">15</span></b><span>Team members across two management layers</span></li>
+      <li class="stat"><b><span data-count="3">3</span></b><span>Business lines: CFDs, Futures, Broker</span></li>
+      <li class="stat"><b><span data-count="10">10</span>M<em>+</em></b><span>Rows processed every day</span></li>
+      <li class="stat"><b><span data-count="100">100</span><em>+</em></b><span>Dashboards in production</span></li>
+      <li class="stat"><b><span data-count="7">7</span><em>+</em></b><span>Years across analytics and commercial roles</span></li>
     </ul>
   </div>
 
-  <section class="block" id="about" aria-labelledby="about-h">
-    <div class="wrap grid2">
-      <div class="side"><p class="eyebrow">01 — About</p></div>
-      <div class="main">
-        <h2 id="about-h">A data function, built from nothing, during hypergrowth.</h2>
-        <p>When I joined Next Ventures in 2020 there was no warehouse, no pipelines, and no reporting layer. Numbers came from whoever could export them. I was the data function.</p>
-        <p>In the years since, FundedNext has scaled to <strong>more than $372 million distributed to traders across 450,000+ accounts in 170+ countries</strong>. The data function grew with it — from one analyst to fifteen people across two management layers, with analysts embedded directly in the CFDs, Futures, and Broker business lines.</p>
-        <p>Along the way my job moved from building dashboards to building the team, standards, and platform that let other people do it well. I also took on product ownership of CFDs, so I am accountable for the decisions the data informs — not just the data.</p>
-        <p class="note">Company figures are from FundedNext's published reporting.</p>
-      </div>
+  <div class="ticker" aria-hidden="true">
+    <div class="track">
+      <div class="group"><span>CFDs</span><span>Futures</span><span>Broker</span><span>PostgreSQL</span><span>Apache Airflow</span><span>Power BI</span><span>Apache Superset</span><span>Metabase</span><span>Python</span><span>SQL</span><span>A/B Testing</span><span>Anomaly Detection</span><span>Semantic Models</span><span>Data Governance</span><span>LLM Workflows</span></div>
+      <div class="group"><span>CFDs</span><span>Futures</span><span>Broker</span><span>PostgreSQL</span><span>Apache Airflow</span><span>Power BI</span><span>Apache Superset</span><span>Metabase</span><span>Python</span><span>SQL</span><span>A/B Testing</span><span>Anomaly Detection</span><span>Semantic Models</span><span>Data Governance</span><span>LLM Workflows</span></div>
     </div>
-  </section>
+  </div>
 
-  <section class="block" id="scope" aria-labelledby="scope-h">
-    <div class="wrap grid2">
-      <div class="side"><p class="eyebrow">02 — Scope</p></div>
-      <div class="main">
-        <h2 id="scope-h">What I own today</h2>
-        <div class="cards">
-          <div class="card"><h3>Team</h3><p>Fifteen people: three managers, four senior analysts, and analysts embedded in each business line rather than pooled behind a central queue.</p></div>
-          <div class="card"><h3>Domains</h3><p>Data, insight, and decision support across the CFDs, Futures, and Broker business lines.</p></div>
-          <div class="card"><h3>Product</h3><p>Product Owner for CFDs. Rule changes and structural modifications to the product run through me.</p></div>
-          <div class="card"><h3>Platform</h3><p>A PostgreSQL warehouse fed by Airflow-orchestrated ELT, processing tens of millions of rows a day into 100+ dashboards on Power BI, Superset, and Metabase.</p></div>
+  <section class="section" id="about" aria-labelledby="about-h">
+    <div class="wrap">
+      <div class="sec-head solo reveal">
+        <div><p class="eyebrow"><b>01</b> About</p><h2 id="about-h">One analyst to a fifteen-person function, through hypergrowth.</h2></div>
+      </div>
+      <div class="about-grid">
+        <div class="prose reveal">
+          <p class="big">When I joined Next Ventures in 2020, there was no warehouse, no pipelines, and no reporting layer. Numbers came from whoever could export them. I was the data function.</p>
+          <p>In the years since, FundedNext has grown into a global prop trading firm, and the data function grew with it — from one analyst to <strong>fifteen people across two management layers</strong>, with analysts embedded directly in the CFDs, Futures, and Broker business lines.</p>
+          <p>My job moved from building dashboards to building the team, standards, and platform that let other people do it well. I also took on <strong>product ownership of CFDs</strong>, so I'm accountable for the decisions the data informs — not just the data.</p>
+          <p>Before data, I worked in sales at Grameenphone and Toshiba. That's where the commercial instinct behind my analytical work comes from.</p>
         </div>
+        <aside class="card context spot reveal" data-d="2" aria-labelledby="ctx-h">
+          <h3 class="k" id="ctx-h">FundedNext at a glance</h3>
+          <dl>
+            <div class="row"><dt>Rewards distributed to traders</dt><dd>$372M+</dd></div>
+            <div class="row"><dt>Trader accounts</dt><dd>450K+</dd></div>
+            <div class="row"><dt>Countries</dt><dd>170+</dd></div>
+            <div class="row"><dt>Founded</dt><dd>2022</dd></div>
+          </dl>
+          <p class="src">As published by FundedNext.</p>
+        </aside>
       </div>
     </div>
   </section>
 
-  <section class="block" id="work" aria-labelledby="work-h">
-    <div class="wrap grid2">
-      <div class="side"><p class="eyebrow">03 — Work</p></div>
-      <div class="main">
-        <h2 id="work-h">Selected work</h2>
-        <ol class="work">
-          <li><span class="n">01</span><div>
+  <section class="section" id="scope" aria-labelledby="scope-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div><p class="eyebrow"><b>02</b> Scope</p><h2 id="scope-h">What I own today</h2></div>
+        <p>Four areas where the decision stops with me.</p>
+      </div>
+      <div class="scope">
+        <article class="card spot reveal">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 20v-1.5a3.5 3.5 0 0 0-3.5-3.5h-5A3.5 3.5 0 0 0 4 18.5V20"/><circle cx="10" cy="8" r="3.5"/><path d="M20 20v-1.5a3.5 3.5 0 0 0-2.5-3.35M15.5 4.7a3.5 3.5 0 0 1 0 6.6"/></svg></div>
+          <h3>Team</h3>
+          <p>Fifteen people: three managers, four senior analysts, and analysts embedded in each business line rather than pooled behind a central queue.</p>
+        </article>
+        <article class="card spot reveal" data-d="1">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 13 9 5 9-5"/></svg></div>
+          <h3>Domains</h3>
+          <p>Data, insight, and decision support across the CFDs, Futures, and Broker business lines.</p>
+        </article>
+        <article class="card spot reveal" data-d="2">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8 12 3 3 8v8l9 5 9-5V8Z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg></div>
+          <h3>Product</h3>
+          <p>Product Owner for CFDs. Rule changes and structural modifications to the product run through me.</p>
+        </article>
+        <article class="card spot reveal" data-d="3">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="8" ry="2.5"/><path d="M4 5.5v13c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5v-13"/><path d="M4 12c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5"/></svg></div>
+          <h3>Platform</h3>
+          <p>A PostgreSQL warehouse fed by Airflow-orchestrated ELT, processing tens of millions of rows a day into 100+ dashboards.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="platform" aria-labelledby="platform-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div><p class="eyebrow"><b>03</b> Platform</p><h2 id="platform-h">From raw data to decisions</h2></div>
+        <p>The stack my team builds and runs, from operational sources through to the three business lines that act on it.</p>
+      </div>
+      <div class="flow">
+        <div class="card node spot reveal"><span class="k">01 · Sources</span><h3>Operational data</h3><ul><li>Product &amp; trading data</li><li>Payments</li><li>KYC &amp; onboarding</li></ul></div>
+        <div class="card node spot reveal" data-d="1"><span class="k">02 · Orchestrate</span><h3>Apache Airflow</h3><ul><li>Scheduled ELT pipelines</li><li>SQL transformations</li></ul></div>
+        <div class="card node hub spot reveal" data-d="2"><span class="k">03 · Store</span><h3>PostgreSQL warehouse</h3><ul><li>10M+ rows a day</li><li>Semantic data models</li><li>Shared metric definitions</li></ul></div>
+        <div class="card node spot reveal" data-d="3"><span class="k">04 · Serve</span><h3>BI layer</h3><ul><li>Power BI</li><li>Apache Superset</li><li>Metabase</li><li>100+ dashboards</li></ul></div>
+        <div class="card node out spot reveal" data-d="4"><span class="k">05 · Decide</span><h3>Business lines</h3><ul><li>CFDs</li><li>Futures</li><li>Broker</li><li>Risk &amp; Compliance</li></ul></div>
+      </div>
+      <div class="flow-note reveal">
+        <span class="k">Alongside</span>
+        <span class="chip"><i></i>ML anomaly detection</span>
+        <span class="chip"><i></i>A/B testing</span>
+        <span class="chip"><i></i>LLM-assisted reporting</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="work" aria-labelledby="work-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div><p class="eyebrow"><b>04</b> Work</p><h2 id="work-h">Selected work</h2></div>
+        <p>The problems my team and I have spent the most time on.</p>
+      </div>
+      <div class="bento">
+        <article class="card work wide spot reveal">
+          <div class="txt">
+            <span class="k">Product analytics</span>
             <h3>Trader lifecycle analytics</h3>
-            <p>End-to-end product analytics across acquisition, onboarding, evaluation, and funded stages — the basis for decisions on activation and evaluation-to-funded conversion.</p>
-            <div class="tags"><span>Product analytics</span><span>Funnels</span><span>Cohorts</span></div>
-          </div></li>
-          <li><span class="n">02</span><div>
-            <h3>Data platform and semantic layer</h3>
-            <p>ELT pipelines on Airflow into a PostgreSQL warehouse, with semantic models that give three business lines one shared set of metric definitions. The harder half of that work was organisational, not technical.</p>
-            <div class="tags"><span>Airflow</span><span>PostgreSQL</span><span>Data modelling</span><span>Governance</span></div>
-          </div></li>
-          <li><span class="n">03</span><div>
-            <h3>Experimentation on pricing and rules</h3>
-            <p>Designed and evaluated A/B tests on pricing, challenge rule structure, and feature releases, and turned the results into rollout decisions.</p>
-            <div class="tags"><span>A/B testing</span><span>Statistics</span><span>Pricing</span></div>
-          </div></li>
-          <li><span class="n">04</span><div>
-            <h3>Anomaly detection with Risk and Compliance</h3>
-            <p>ML-based anomaly detection and rule monitoring, built in partnership with the Risk and Compliance teams to streamline monitoring and reporting.</p>
-            <div class="tags"><span>Machine learning</span><span>Anomaly detection</span><span>Risk</span></div>
-          </div></li>
-          <li><span class="n">05</span><div>
-            <h3>LLM-assisted reporting</h3>
-            <p>Applying large language models to internal reporting workflows, moving recurring write-ups off analysts' plates.</p>
-            <div class="tags"><span>LLMs</span><span>Automation</span></div>
-          </div></li>
-        </ol>
+            <p>End-to-end analytics across acquisition, onboarding, evaluation, and funded stages — the basis for decisions on activation and evaluation-to-funded conversion.</p>
+            <div class="tags"><span>Funnels</span><span>Cohorts</span><span>Conversion</span></div>
+          </div>
+          <div class="viz funnel" aria-hidden="true"><div>Acquisition</div><div>Onboarding</div><div>Evaluation</div><div>Funded</div></div>
+        </article>
+        <article class="card work spot reveal" data-d="1">
+          <span class="k">Data platform</span>
+          <h3>One set of metric definitions</h3>
+          <p>Semantic models that give three business lines a single definition for each contested metric. The SQL was the easy half; the agreement was the work.</p>
+          <div class="viz stack" aria-hidden="true"><span>Airflow</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>PostgreSQL</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span>BI</span></div>
+          <div class="tags"><span>Governance</span><span>Modelling</span></div>
+        </article>
+        <article class="card work spot reveal">
+          <span class="k">Experimentation</span>
+          <h3>A/B tests on pricing and rules</h3>
+          <p>Designed and evaluated experiments on pricing, challenge rule structure, and feature releases, and turned the results into rollout decisions.</p>
+          <div class="viz ab" aria-hidden="true"><div>A<i style="width:62%"></i></div><div>B<i style="width:80%"></i></div></div>
+          <div class="tags"><span>Statistics</span><span>Pricing</span></div>
+        </article>
+        <article class="card work spot reveal" data-d="1">
+          <span class="k">Risk &amp; Compliance</span>
+          <h3>ML anomaly detection</h3>
+          <p>Anomaly detection and rule monitoring built with the Risk and Compliance teams to streamline monitoring and reporting.</p>
+          <svg class="viz spark" viewBox="0 0 300 60" aria-hidden="true">
+            <line class="th" x1="0" y1="20" x2="300" y2="20"/>
+            <path class="ar" d="M0 44 L20 40 L40 42 L60 36 L80 39 L100 35 L120 37 L140 33 L160 36 L180 32 L200 9 L220 34 L240 31 L260 33 L280 29 L300 31 L300 60 L0 60 Z"/>
+            <polyline class="ln" points="0,44 20,40 40,42 60,36 80,39 100,35 120,37 140,33 160,36 180,32 200,9 220,34 240,31 260,33 280,29 300,31"/>
+            <circle class="halo" cx="200" cy="9" r="6"/>
+            <circle class="pt" cx="200" cy="9" r="4"/>
+          </svg>
+          <div class="tags"><span>Machine learning</span><span>Monitoring</span></div>
+        </article>
+        <article class="card work spot reveal" data-d="2">
+          <span class="k">Automation</span>
+          <h3>LLM-assisted reporting</h3>
+          <p>Applying large language models to internal reporting workflows, moving recurring write-ups off analysts' plates.</p>
+          <div class="viz skel" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+          <div class="tags"><span>LLMs</span><span>Workflows</span></div>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="block" id="principles" aria-labelledby="principles-h">
-    <div class="wrap grid2">
-      <div class="side"><p class="eyebrow">04 — Principles</p></div>
-      <div class="main">
-        <h2 id="principles-h">How I work</h2>
-        <ol class="principles">
-          <li><strong>Metric definitions are a governance problem, not a technical one.</strong><p>The hardest thing I have enforced is not a pipeline or a schema. It is getting three business lines to agree on what a single contested metric means. The SQL was the easy half.</p></li>
-          <li><strong>Embedded beats centralised, once you can afford it.</strong><p>A central queue optimises for analyst utilisation. Embedding optimises for decisions actually changing. Those are different goals, and the second is the one that matters.</p></li>
-          <li><strong>Adoption is the deliverable.</strong><p>I have shipped work that was technically sound and went unused. A dashboard nobody opens is not a partial success; it is a signal the problem was never properly understood.</p></li>
-          <li><strong>Demand will always exceed capacity.</strong><p>The answer is not heroics. It is a legible intake process, an honest backlog, and the willingness to tell stakeholders what their request costs and what it displaces.</p></li>
-        </ol>
+  <section class="section" id="principles" aria-labelledby="principles-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div><p class="eyebrow"><b>05</b> Principles</p><h2 id="principles-h">How I work</h2></div>
+        <p>What building a data function from zero, during hypergrowth, taught me.</p>
       </div>
+      <ol class="principles">
+        <li class="card principle spot reveal"><h3>Metric definitions are a governance problem, not a technical one.</h3><p>The hardest thing I have enforced is not a pipeline or a schema. It is getting three business lines to agree on what a single contested metric means. The SQL was the easy half.</p></li>
+        <li class="card principle spot reveal" data-d="1"><h3>Embedded beats centralised, once you can afford it.</h3><p>A central queue optimises for analyst utilisation. Embedding optimises for decisions actually changing. Those are different goals, and the second is the one that matters.</p></li>
+        <li class="card principle spot reveal"><h3>Adoption is the deliverable.</h3><p>I have shipped work that was technically sound and went unused. A dashboard nobody opens is not a partial success; it is a signal the problem was never properly understood.</p></li>
+        <li class="card principle spot reveal" data-d="1"><h3>Demand will always exceed capacity.</h3><p>The answer is not heroics. It is a legible intake process, an honest backlog, and the willingness to tell stakeholders what their request costs and what it displaces.</p></li>
+      </ol>
     </div>
   </section>
 
-  <section class="block" id="experience" aria-labelledby="experience-h">
-    <div class="wrap grid2">
-      <div class="side"><p class="eyebrow">05 — Experience</p></div>
-      <div class="main">
-        <h2 id="experience-h">Experience</h2>
-        <ol class="timeline">
-          <li><span class="when">2020 — Now</span><div>
-            <p class="role">Analyst → Manager II, Business Intelligence</p>
-            <p class="org">Next Ventures (FundedNext)</p>
-            <p class="desc">Built the BI function from zero. Lead a team of fifteen across CFDs, Futures, and Broker, and serve as Product Owner for CFDs.</p>
-          </div></li>
-          <li><span class="when">2019 — 2020</span><div>
-            <p class="role">Senior Executive, Corporate Sales</p>
-            <p class="org">International Office Machine (Toshiba)</p>
-            <p class="desc">B2B account management, prospect evaluation, and sales reporting.</p>
-          </div></li>
-          <li><span class="when">2016 — 2019</span><div>
-            <p class="role">Senior Trainee, Sales &amp; Operations</p>
-            <p class="org">Grameenphone</p>
-            <p class="desc">Employee of the Month nine times and GP 4G National Championship winner. Where the commercial instinct that shapes my analytical work comes from.</p>
-          </div></li>
+  <section class="section" id="experience" aria-labelledby="experience-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head solo reveal">
+        <div><p class="eyebrow"><b>06</b> Experience</p><h2 id="experience-h">From the sales floor to data leadership</h2></div>
+      </div>
+      <div class="exp-grid">
+        <ol class="tl reveal">
+          <li class="now">
+            <span class="when">2020 — Present</span>
+            <h3>Analyst → Manager II, Business Intelligence</h3>
+            <p class="org-name">Next Ventures (FundedNext)</p>
+            <p class="d">Built the BI function from zero. Lead a fifteen-person team across CFDs, Futures, and Broker, and serve as Product Owner for CFDs.</p>
+          </li>
+          <li>
+            <span class="when">Dec 2019 — Feb 2020</span>
+            <h3>Senior Executive, Corporate Sales</h3>
+            <p class="org-name">International Office Machine (Toshiba)</p>
+            <p class="d">B2B account management, prospect evaluation, and sales reporting.</p>
+          </li>
+          <li>
+            <span class="when">Jul 2016 — Feb 2019</span>
+            <h3>Senior Trainee, Sales &amp; Operations</h3>
+            <p class="org-name">Grameenphone</p>
+            <p class="d">Customer relationships, negotiation, and market feedback at Bangladesh's largest mobile operator.</p>
+            <div class="badges"><span>Employee of the Month ×9</span><span>GP 4G National Championship</span><span>Battle of Excellence · Best Performer</span><span>GP Intra 4G Championship</span></div>
+          </li>
         </ol>
-
-        <h3 class="sub">Education</h3>
-        <ol class="timeline">
-          <li><span class="when">2024</span><div>
-            <p class="role">MSc, Computer Science &amp; Engineering (Data Science)</p>
-            <p class="org">United International University</p>
-          </div></li>
-          <li><span class="when">2019</span><div>
-            <p class="role">BBA, Finance</p>
-            <p class="org">East West University</p>
-          </div></li>
-        </ol>
-
-        <h3 class="sub">Toolkit</h3>
-        <div class="toolkit">
-          <span>SQL · PostgreSQL · MySQL</span><span>Python</span><span>R</span><span>Airflow</span><span>Power BI</span><span>Apache Superset</span><span>Metabase</span><span>Google Cloud</span><span>Machine learning</span><span>LLMs</span>
+        <div class="side-stack">
+          <div class="card mini spot reveal" data-d="1">
+            <h3 class="k">Education</h3>
+            <ul class="edu">
+              <li><b>MSc, Computer Science &amp; Engineering</b><span>Data Science · United International University</span><em>2024</em></li>
+              <li><b>BBA, Finance</b><span>East West University</span><em>2019</em></li>
+            </ul>
+          </div>
+          <div class="card mini spot reveal" data-d="2">
+            <h3 class="k">Toolkit</h3>
+            <div class="tools"><span>SQL</span><span>PostgreSQL</span><span>MySQL</span><span>Python</span><span>R</span><span>Airflow</span><span>Power BI</span><span>Superset</span><span>Metabase</span><span>GCP</span><span>Machine learning</span><span>LLMs</span><span>Git</span></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="block contact" id="contact" aria-labelledby="contact-h">
-    <div class="wrap grid2">
-      <div class="side"><p class="eyebrow">06 — Contact</p></div>
-      <div class="main">
-        <h2 id="contact-h">Let's talk.</h2>
-        <p>Open to conversations about data leadership in fintech and trading.</p>
-        <div class="big-links">
-          <a href="https://www.linkedin.com/in/kazi-nadimul-haque/" rel="noopener">LinkedIn <small>↗</small></a>
-          <a href="https://github.com/nadim-raj" rel="noopener">GitHub <small>↗</small></a>
+  <section class="section" id="contact" aria-labelledby="contact-h" style="padding-top:0;padding-bottom:0">
+    <div class="wrap">
+      <div class="cta reveal">
+        <img class="cta-avatar" src="avatar.jpg" width="88" height="88" alt="" loading="lazy" decoding="async">
+        <p class="eyebrow"><b>07</b> Contact</p>
+        <h2 id="contact-h">Let's talk data leadership.</h2>
+        <p>Open to conversations about building and scaling data functions in fintech and trading.</p>
+        <div class="cta-actions">
+          <a class="btn btn-white" href="https://www.linkedin.com/in/kazi-nadimul-haque/" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>Connect on LinkedIn</a>
+          <a class="btn btn-line" href="https://github.com/nadim-raj" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg>GitHub</a>
         </div>
+        <p class="print-only">linkedin.com/in/kazi-nadimul-haque · github.com/nadim-raj · nadim-raj.github.io</p>
       </div>
     </div>
   </section>
 </main>
 
-<footer>
+<footer class="foot">
   <div class="wrap">
-    <span>© 2026 Kazi Nadimul Haque</span>
-    <span>Kuala Lumpur, Malaysia</span>
+    <span>© <span id="year">2026</span> Kazi Nadimul Haque · Kuala Lumpur</span>
+    <nav aria-label="Elsewhere"><a href="https://www.linkedin.com/in/kazi-nadimul-haque/" rel="noopener">LinkedIn</a><a href="https://github.com/nadim-raj" rel="noopener">GitHub</a></nav>
   </div>
 </footer>
+
+<script>
+(function(){
+  var d=document.documentElement;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasIO='IntersectionObserver' in window;
+
+  /* Theme */
+  var btn=document.getElementById('theme'),meta=document.querySelector('meta[name="theme-color"]');
+  function paint(t){btn.setAttribute('aria-label',t==='dark'?'Switch to light theme':'Switch to dark theme');if(meta)meta.setAttribute('content',t==='dark'?'#07070A':'#F9FAFB')}
+  paint(d.getAttribute('data-theme'));
+  btn.addEventListener('click',function(){var t=d.getAttribute('data-theme')==='dark'?'light':'dark';d.setAttribute('data-theme',t);try{localStorage.setItem('theme',t)}catch(e){}paint(t)});
+
+  /* Nav state + progress */
+  var nav=document.querySelector('.nav'),bar=document.querySelector('.progress'),ticking=false;
+  function onScroll(){var y=window.scrollY||0,h=d.scrollHeight-window.innerHeight;nav.classList.toggle('scrolled',y>8);bar.style.transform='scaleX('+(h>0?Math.min(y/h,1):0)+')';ticking=false}
+  window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(onScroll)}},{passive:true});
+  onScroll();
+
+  /* Reveal on scroll */
+  var els=[].slice.call(document.querySelectorAll('.reveal'));
+  if(hasIO&&!reduce){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -6% 0px',threshold:0.08});
+    els.forEach(function(el){io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add('in')})}
+
+  /* Count up */
+  function count(el){var end=+el.getAttribute('data-count'),t0=null,dur=1300;el.textContent='0';
+    function f(t){if(t0===null)t0=t;var p=Math.min((t-t0)/dur,1);el.textContent=Math.round(end*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)}
+    requestAnimationFrame(f)}
+  if(hasIO&&!reduce){
+    var co=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){count(e.target);co.unobserve(e.target)}})},{threshold:0.6});
+    [].forEach.call(document.querySelectorAll('[data-count]'),function(n){co.observe(n)});
+  }
+
+  /* Active nav link */
+  var links=[].slice.call(document.querySelectorAll('.links a')),byId={};
+  links.forEach(function(a){byId[a.getAttribute('href').slice(1)]=a});
+  if(hasIO){
+    var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.remove('active')});if(byId[e.target.id])byId[e.target.id].classList.add('active')}})},{rootMargin:'-45% 0px -50% 0px'});
+    Object.keys(byId).forEach(function(id){var s=document.getElementById(id);if(s)so.observe(s)});
+  }
+
+  /* Card spotlight */
+  if(window.matchMedia&&window.matchMedia('(pointer: fine)').matches){
+    [].forEach.call(document.querySelectorAll('.spot'),function(c){c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')})});
+  }
+
+  var y=document.getElementById('year');if(y)y.textContent=new Date().getFullYear();
+})();
+</script>
 </body>
 </html>
