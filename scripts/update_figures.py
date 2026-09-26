@@ -99,11 +99,18 @@ def validate(found: dict[str, float], previous: dict) -> tuple[dict[str, float],
 
 
 def render(key: str, value: float) -> str:
+    """Round down, never up.
+
+    Every figure here is rendered with a trailing "+", so the number has to be
+    one the source actually supports: 451.7K rendered as "452K+" claims more
+    than FundedNext published. Truncating keeps the claim true.
+    """
+    floored = int(value)  # values are positive, so this floors
     if key == "rewards_musd":
-        return f"${value:,.0f}M+"
+        return f"${floored:,}M+"
     if key == "accounts_k":
-        return f"{value:,.0f}K+"
-    return f"{value:,.0f}+"
+        return f"{floored:,}K+"
+    return f"{floored:,}+"
 
 
 def apply_to_page(values: dict[str, float], page: Path = PAGE) -> list[str]:
