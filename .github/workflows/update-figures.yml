@@ -26,7 +26,9 @@ jobs:
         env:
           CI_SIGNING_KEY: ${{ secrets.CI_SIGNING_KEY }}
         run: |
-          if git diff --quiet; then
+          # --porcelain, not diff: the state file is untracked on a first run
+          # and git diff would not see it.
+          if [ -z "$(git status --porcelain index.html data/fundednext.json)" ]; then
             echo "figures unchanged; nothing to commit"
             exit 0
           fi

@@ -153,6 +153,7 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     changes = apply_to_page(accepted)
+    STATE.parent.mkdir(parents=True, exist_ok=True)  # the directory is not tracked when empty
     state = dict(previous)
     state.update(accepted)
     state["checked_at"] = date.today().isoformat()
