@@ -1,0 +1,54 @@
+name: Refresh FundedNext figures
+
+# The figures card quotes FundedNext's published numbers. This keeps it current
+# without anyone remembering to. It commits only when a value actually changed,
+# and the updater leaves the page untouched if the source is unreachable or the
+# parse looks wrong - a stale number is a non-event, a wrong one is not.
+
+on:
+  schedule:
+    - cron: "17 6 * * 1"   # Mondays, 06:17 UTC
+  workflow_dispatch:        # and on demand
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Read the source and update the page
+        run: python3 scripts/update_figures.py
+
+      - name: Commit if a figure changed
+        env:
+          CI_SIGNING_KEY: ${{ secrets.CI_SIGNING_KEY }}
+        run: |
+          if git diff --quiet; then
+            echo "figures unchanged; nothing to commit"
+            exit 0
+          fi
+
+          # Sign with a key dedicated to this workflow, so automated commits
+          # keep the Verified badge without the personal signing key leaving
+          # its machine.
+          mkdir -p ~/.ssh
+          printf '%s\n' "$CI_SIGNING_KEY" > ~/.ssh/ci_signing
+          chmod 600 ~/.ssh/ci_signing
+          ssh-keygen -y -f ~/.ssh/ci_signing > ~/.ssh/ci_signing.pub
+
+          git config user.name "Kazi Nadimul Haque"
+          git config user.email "329381083+nadim-raj@users.noreply.github.com"
+          git config gpg.format ssh
+          git config user.signingkey ~/.ssh/ci_signing.pub
+          git config commit.gpgsign true
+
+          git add index.html data/fundednext.json
+          git commit -m "Refresh FundedNext figures from source
+
+          Automated weekly update. Values are read from the public homepage,
+          validated against plausible ranges, and rejected if a cumulative
+          figure appears to fall."
+          git push
