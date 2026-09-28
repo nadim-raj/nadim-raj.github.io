@@ -17,7 +17,7 @@ jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
 
       - name: Read the source and update the page
         run: python3 scripts/update_figures.py
@@ -37,8 +37,9 @@ jobs:
           # keep the Verified badge without the personal signing key leaving
           # its machine.
           mkdir -p ~/.ssh
-          printf '%s\n' "$CI_SIGNING_KEY" > ~/.ssh/ci_signing
-          chmod 600 ~/.ssh/ci_signing
+          # Create it 0600 from the start. Writing first and chmod-ing after
+          # leaves a window where the private key sits at the default umask.
+          (umask 077; printf '%s\n' "$CI_SIGNING_KEY" > ~/.ssh/ci_signing)
           ssh-keygen -y -f ~/.ssh/ci_signing > ~/.ssh/ci_signing.pub
 
           git config user.name "Kazi Nadimul Haque"
