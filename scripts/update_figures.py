@@ -15,6 +15,14 @@ The rules are deliberately conservative:
   only ever increase, so a decrease means the parse is wrong, not the business.
 * Nothing is written unless a value actually changed.
 
+The server-rendered HTML is not the live number. The homepage hydrates its
+counters from METRICS_API after load, so the HTML can lag what a visitor sees
+by months: on 2026-10-05 the HTML still said $316.1M / 451.7K while the page
+showed $389M / 606.6K. The API is therefore read first, and the HTML is only a
+fallback (and the sole source for countries, which the API does not carry).
+Because cumulative figures cannot fall, a stale HTML value can never overwrite
+a newer API one.
+
 Usage:
     python3 scripts/update_figures.py --dry-run
     python3 scripts/update_figures.py
@@ -32,6 +40,7 @@ from datetime import date
 from pathlib import Path
 
 SOURCE = "https://fundednext.com/"
+METRICS_API = "https://api.fundednext.com/api/landing-page-metrics"
 STATE = Path("data/fundednext.json")
 PAGE = Path("index.html")
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0 Safari/537.36"
@@ -41,6 +50,12 @@ FIGURES = {
     "rewards_musd": (r"\$\s*([\d,]+\.?\d*)\s*\$\s*0\.0\s*M\s*\+?[^.]{0,60}?[Rr]eward", (50.0, 100_000.0), True),
     "accounts_k": (r"([\d,]+\.?\d*)\s*0\.0\s*K\s*\+?\s*FundedNext\s+Accounts", (1.0, 100_000.0), True),
     "countries": (r"([\d,]+)\s*\+?\s*countries", (1.0, 250.0), False),
+}
+
+# figure key -> (field in the metrics API response, unit suffix it is quoted in)
+API_FIELDS = {
+    "rewards_musd": ("total_rewards", "M"),
+    "accounts_k": ("total_accounts", "K"),
 }
 
 
@@ -76,6 +91,21 @@ def parse(text: str) -> dict[str, float]:
                 candidates.append(value)
         if candidates:
             found[key] = max(candidates)
+    return found
+
+
+def parse_api(payload: dict) -> dict[str, float]:
+    """Read the live counters, quoted as display strings like "$389M+" or "606.6K+".
+
+    A field whose unit is not the one expected is skipped rather than rescaled:
+    "$1.2B+" silently read as 1.2 million would be worse than a stale number.
+    """
+    data = payload.get("data") or {}
+    found: dict[str, float] = {}
+    for key, (field, unit) in API_FIELDS.items():
+        match = re.fullmatch(rf"\s*\$?\s*([\d,]+\.?\d*)\s*{unit}\s*\+?\s*", str(data.get(field, "")), re.I)
+        if match:
+            found[key] = float(match.group(1).replace(",", ""))
     return found
 
 
@@ -139,13 +169,22 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     previous = json.loads(STATE.read_text()) if STATE.exists() else {}
+    # Each source is optional on its own; a fetch failure must never break the page.
+    found: dict[str, float] = {}
     try:
-        text = visible_text(fetch())
-    except Exception as error:  # noqa: BLE001 - a fetch failure must never break the page
-        print(f"source unreachable ({error}); leaving the page untouched")
+        found.update(parse(visible_text(fetch())))
+    except Exception as error:  # noqa: BLE001
+        print(f"homepage unreachable ({error})")
+    try:
+        live = parse_api(json.loads(fetch(METRICS_API)))
+        found.update(live)  # the live counters win over the server-rendered snapshot
+        print("live metrics:", live or "none parsed")
+    except Exception as error:  # noqa: BLE001
+        print(f"metrics API unreachable ({error}); falling back to the homepage HTML")
+    if not found:
+        print("no source reachable; leaving the page untouched")
         return 0
 
-    found = parse(text)
     accepted, rejected = validate(found, previous)
     for note in rejected:
         print(f"rejected: {note}")
@@ -164,7 +203,7 @@ def main(argv: list[str] | None = None) -> int:
     state = dict(previous)
     state.update(accepted)
     state["checked_at"] = date.today().isoformat()
-    state["source"] = SOURCE
+    state["source"] = f"{METRICS_API} ; {SOURCE}"
     STATE.write_text(json.dumps(state, indent=2, sort_keys=True) + "\n")
 
     for change in changes:

@@ -51,7 +51,7 @@ jobs:
           git add index.html data/fundednext.json
           git commit -m "Refresh FundedNext figures from source
 
-          Automated weekly update. Values are read from the public homepage,
-          validated against plausible ranges, and rejected if a cumulative
-          figure appears to fall."
+          Automated weekly update. Values are read from the live metrics API behind
+          the public homepage, validated against plausible ranges, and rejected
+          if a cumulative figure appears to fall."
           git push
