@@ -1,7 +1,7 @@
 {
-  "accounts_k": 630.2,
-  "checked_at": "2026-10-19",
+  "accounts_k": 640.7,
+  "checked_at": "2026-10-26",
   "countries": 170.0,
-  "rewards_musd": 398.0,
+  "rewards_musd": 402.9,
   "source": "https://api.fundednext.com/api/landing-page-metrics ; https://fundednext.com/"
 }
